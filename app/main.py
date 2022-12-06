@@ -7,14 +7,14 @@ def run():
     data = list(filter(lambda item : item["Continent"] == "South America", data))
 
     countries = list(map(lambda x: x["Country/Territory"], data))
-    percentages = list(map(lambda x: float(x["World Population Percentage"]), data))
+    percentages = list(map(lambda x: x["World Population Percentage"], data))
     chart.generate_pie_chart(countries, percentages)
 
     country = input("Ingrese un país: ")
     print(country)
 
     result = utils.population_by_country(data, country)
-
+    
     if len(result) > 0:
         country = result[0]
         print(country)
